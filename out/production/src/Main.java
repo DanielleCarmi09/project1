@@ -113,6 +113,10 @@ public class Room{
         this.c = c;
         this.b = b;
     }
+    public Room(Shirt[]shirts, Bed b){
+        this.c = new Closet(shirts);
+        this.b = b;
+    }
     public Closet getCloset(){
         return this.c;
     }
