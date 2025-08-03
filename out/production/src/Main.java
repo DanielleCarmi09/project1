@@ -1,3 +1,12 @@
+public class main{
+
+}
+public static void main(String[]args){
+
+}
+
+
+
 public class Bed{
     private double height;
     private int Pillow_Amount;
@@ -54,7 +63,7 @@ public class Shirt{
 }
 
 public class Util{
-    protected Shirt[] AddShirt(Shirt[]ShirtsArr, Shirt s){
+    public Shirt[] AddShirt(Shirt[]ShirtsArr, Shirt s){
         Shirt[] newArr = new Shirt[ShirtsArr.length];
         for (int i = 0; i<ShirtsArr.length;i++){
             newArr[i] = ShirtsArr[i];
@@ -91,8 +100,24 @@ public class Closet{
 
     }
     public void AddShirt(Shirt s){
-        this.ShirtsArr = Util.AddShirt(this.ShirtsArr, s);
+        Util u = new Util();
+        this.ShirtsArr = u.AddShirt(this.ShirtsArr, s);
     }
+}
 
+public class Room{
+    private Closet c;
+    private Bed b;
+
+    public Room(Closet c, Bed b){
+        this.c = c;
+        this.b = b;
+    }
+    public Closet getCloset(){
+        return this.c;
+    }
+    public Bed getBed(){
+        return this.b;
+    }
 }
 
