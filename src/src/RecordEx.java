@@ -12,14 +12,17 @@ public class RecordEx {
             if(this.grade>9) return true;
             else return false;
         }
-
-
+    }
+    public record Classroom(int classNum, int grade, Student[] students){
 
     }
     public static void ThisStudent(String name, int grade, int classNum){
         Student s = new Student(name, grade, classNum);
         System.out.println(s.Information());
         System.out.println(s.isInHighschool());
+    }
+    public static Classroom[] sortClassrooms(Student[] students){
+
     }
     public static void main(String[] args){
         ThisStudent("Danielle", 11, 11);
