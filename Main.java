@@ -53,6 +53,17 @@ public class Shirt{
     }
 }
 
+public class Util{
+    protected Shirt[] AddShirt(Shirt[]ShirtsArr, Shirt s){
+        Shirt[] newArr = new Shirt[ShirtsArr.length];
+        for (int i = 0; i<ShirtsArr.length;i++){
+            newArr[i] = ShirtsArr[i];
+        }
+        newArr[newArr.length-1] = s;
+        return newArr;
+    }
+}
+
 public class Closet{
     private Shirt[] ShirtsArr;
 
@@ -79,4 +90,9 @@ public class Closet{
         return ShirtsBySizeArr;
 
     }
+    public void AddShirt(Shirt s){
+        this.ShirtsArr = Util.AddShirt(this.ShirtsArr, s);
+    }
+
 }
+
