@@ -34,3 +34,49 @@ public class Bed{
         this.Sheet_Color = Sheet_Color;
     }
 }
+
+public class Shirt{
+    public int size;
+    public String color;
+
+    public Shirt(int size, String color){
+        this.size = size;
+        this.color = color;
+    }
+
+    public int getSize(){
+        return this.size;
+    }
+
+    public String getColor(){
+        return this.color;
+    }
+}
+
+public class Closet{
+    private Shirt[] ShirtsArr;
+
+    public Closet(Shirt[]ShirtsArr){
+        this.ShirtsArr = ShirtsArr;
+    }
+
+    public Shirt[] getShirtsArr(){
+        return this.ShirtsArr
+    }
+    public Shirt[] getShirtsBySize(int size){
+        length = 0;
+        for (int i = 0; i<this.ShirtsArr.length;i++){
+            if(this.ShirtsArr[i].getSize() == size) length++;
+        }
+        ShirtsBySizeArr = new shirt[length];
+        place = 0;
+        for (int i = 0; i<ShirtsArr.length;i++){
+            if (this.ShirtsArr[i].getSize() == size){
+                ShirtsBySizeArr[place] = this.ShirtsArr[i];
+                place++;
+            }
+        }
+        return ShirtsBySizeArr;
+
+    }
+}
