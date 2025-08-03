@@ -4,6 +4,10 @@ public class RecordEx {
             String info = "student " + this.name + " is in " + this.grade + "grade in class number " + this.classNum;
             return info;
         }
+        public boolean isInHighschool(){
+            if(this.grade>9) return true;
+            else return false;
+        }
 
     }
 }
