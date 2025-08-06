@@ -27,8 +27,7 @@ public class Closet {
     }
 
     public void addShirt(Shirt s) {
-        Util u = new Util();
-        this.shirtsArr = u.addShirt(this.shirtsArr, s);
+        this.shirtsArr = Util.addShirt(this.shirtsArr, s);
     }
 
     public static void main(String[] args) {

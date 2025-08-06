@@ -1,5 +1,5 @@
 public class Util {
-    public Shirt[] addShirt(Shirt[] shirtsArr, Shirt shirt) {
+    public static Shirt[] addShirt(Shirt[] shirtsArr, Shirt shirt) {
         Shirt[] newArr = new Shirt[shirtsArr.length+1];
         for (int i = 0; i < shirtsArr.length; i++) {
             newArr[i] = shirtsArr[i];

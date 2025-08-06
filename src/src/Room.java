@@ -1,22 +1,22 @@
 public class Room {
-    private Closet c;
-    private Bed b;
+    private Closet closet;
+    private Bed bed;
 
-    public Room(Closet c, Bed b) {
-        this.c = c;
-        this.b = b;
+    public Room(Closet closet, Bed bed) {
+        this.closet = closet;
+        this.bed = bed;
     }
 
-    public Room(Shirt[] shirts, Bed b) {
-        this.c = new Closet(shirts);
-        this.b = b;
+    public Room(Shirt[] shirts, Bed bed) {
+        this.closet = new Closet(shirts);
+        this.bed = bed;
     }
 
     public Closet getCloset() {
-        return this.c;
+        return this.closet;
     }
 
     public Bed getBed() {
-        return this.b;
+        return this.bed;
     }
 }
