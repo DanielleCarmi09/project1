@@ -14,7 +14,7 @@ public class Closet {
         for (int i = 0; i < this.shirtsArr.length; i++) {
             if (this.shirtsArr[i].getSize() == size) length++;
         }
-        Shirt[] shirtsBySizeArr = new shirt[length];
+        Shirt[] shirtsBySizeArr = new Shirt[length];
         int place = 0;
         for (int i = 0; i < shirtsArr.length; i++) {
             if (this.shirtsArr[i].getSize() == size) {
@@ -30,17 +30,16 @@ public class Closet {
         Util u = new Util();
         this.shirtsArr = u.addShirt(this.shirtsArr, s);
     }
-}
-
-
 
     public static void main(String[] args) {
         Shirt[] shirts = {new Shirt(1, "red"), new Shirt(2, "blue")};
         Util u = new Util();
         Shirt[] newShirts = u.addShirt(shirts, new Shirt(3, "green"));
         for (int i = 0; i < newShirts.length; i++) {
-            System.out.println(newShirts[i]);
+            System.out.println(newShirts[i].getSize()+ " " + newShirts[i].getColor());
         }
     }
+}
+
 
 
