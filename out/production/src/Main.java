@@ -1,24 +1,17 @@
 import com.sun.jmx.mbeanserver.Util;
 
 public class main{
-
 }
-public static void main(String[]args){
-    Shirt[] shirts ={new Shirt(1,"red"), new Shirt(2,"blue")};
-    Util u = new Util();
-    Shirt[] newShirts = u.addShirt(shirts, new Shirt(3,"green"));
-    for (int i = 0; i< newShirts.length;i++){
-        System.out.println(newShirts[i]);
-    }
+
 
 
 public class Util{
-    public Shirt[] addShirt(Shirt[]shirtsArr, Shirt s){
+    public Shirt[] addShirt(Shirt[]shirtsArr, Shirt shirt){
         Shirt[] newArr = new Shirt[shirtsArr.length];
         for (int i = 0; i<shirtsArr.length;i++){
             newArr[i] = shirtsArr[i];
         }
-        newArr[newArr.length-1] = s;
+        newArr[newArr.length-1] = shirt;
         return newArr;
     }
 }
@@ -72,6 +65,15 @@ public class Room{
     }
     public Bed getBed(){
         return this.b;
+    }
+}
+
+public static void main(String[]args) {
+    Shirt[] shirts = {new Shirt(1, "red"), new Shirt(2, "blue")};
+    Util u = new Util();
+    Shirt[] newShirts = u.addShirt(shirts, new Shirt(3, "green"));
+    for (int i = 0; i < newShirts.length; i++) {
+        System.out.println(newShirts[i]);
     }
 }
 
