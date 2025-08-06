@@ -21,9 +21,7 @@ public class RecordEx {
         System.out.println(s.Information());
         System.out.println(s.isInHighschool());
     }
-    public static Classroom[] sortClassrooms(Student[] students){
 
-    }
     public static void main(String[] args){
         ThisStudent("Danielle", 11, 11);
     }
