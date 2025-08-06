@@ -7,4 +7,7 @@ public class Util {
         newArr[newArr.length-1] = shirt;
         return newArr;
     }
+    public static boolean isTolerant(double value, double wantedValue, double tolerance){
+        return value-tolerance==wantedValue || value+tolerance==wantedValue;
+    }
 }
