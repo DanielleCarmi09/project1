@@ -1,72 +1,22 @@
+import com.sun.jmx.mbeanserver.Util;
+
 public class main{
 
 }
 public static void main(String[]args){
-
-}
-
-
-
-public class Bed{
-    private double height;
-    private int Pillow_Amount;
-    private String Sheet_Color;
-    private double price;
-
-    public Bed(double height, int Pillow_Amount, String Sheet_Color, double price){
-        this.height = height;
-        this.Pillow_Amount = Pillow_Amount;
-        this.Sheet_Color = Sheet_Color;
-        this.price = price;
+    Shirt[] shirts ={new Shirt(1,"red"), new Shirt(2,"blue")};
+    Util u = new Util();
+    Shirt[] newShirts = u.addShirt(shirts, new Shirt(3,"green"));
+    for (int i = 0; i< newShirts.length;i++){
+        System.out.println(newShirts[i]);
     }
 
-    public Bed(double height, String Sheet_Color){
-        this.height = height;
-        this.Pillow_Amount = 1;
-        this.Sheet_Color = Sheet_Color;
-        this.price = 100;
-    }
-
-    public double getHeight(){
-        return this.height;
-    }
-    public int getPillow_Amount(){
-        return this.Pillow_Amount;
-    }
-    public String getSheet_Color(){
-        return this.Sheet_Color;
-    }
-    public double getPrice(){
-        return this.price;
-    }
-    public void setSheet_Color(String Sheet_Color){
-        this.Sheet_Color = Sheet_Color;
-    }
-}
-
-public class Shirt{
-    public int size;
-    public String color;
-
-    public Shirt(int size, String color){
-        this.size = size;
-        this.color = color;
-    }
-
-    public int getSize(){
-        return this.size;
-    }
-
-    public String getColor(){
-        return this.color;
-    }
-}
 
 public class Util{
-    public Shirt[] AddShirt(Shirt[]ShirtsArr, Shirt s){
-        Shirt[] newArr = new Shirt[ShirtsArr.length];
-        for (int i = 0; i<ShirtsArr.length;i++){
-            newArr[i] = ShirtsArr[i];
+    public Shirt[] addShirt(Shirt[]shirtsArr, Shirt s){
+        Shirt[] newArr = new Shirt[shirtsArr.length];
+        for (int i = 0; i<shirtsArr.length;i++){
+            newArr[i] = shirtsArr[i];
         }
         newArr[newArr.length-1] = s;
         return newArr;
@@ -74,34 +24,34 @@ public class Util{
 }
 
 public class Closet{
-    private Shirt[] ShirtsArr;
+    private Shirt[] shirtsArr;
 
-    public Closet(Shirt[]ShirtsArr){
-        this.ShirtsArr = ShirtsArr;
+    public Closet(Shirt[]shirtsArr){
+        this.shirtsArr = shirtsArr;
     }
 
     public Shirt[] getShirtsArr(){
-        return this.ShirtsArr
+        return this.shirtsArr
     }
     public Shirt[] getShirtsBySize(int size){
         length = 0;
-        for (int i = 0; i<this.ShirtsArr.length;i++){
-            if(this.ShirtsArr[i].getSize() == size) length++;
+        for (int i = 0; i<this.shirtsArr.length;i++){
+            if(this.shirtsArr[i].getSize() == size) length++;
         }
-        ShirtsBySizeArr = new shirt[length];
+        shirtsBySizeArr = new shirt[length];
         place = 0;
-        for (int i = 0; i<ShirtsArr.length;i++){
-            if (this.ShirtsArr[i].getSize() == size){
-                ShirtsBySizeArr[place] = this.ShirtsArr[i];
+        for (int i = 0; i<shirtsArr.length;i++){
+            if (this.shirtsArr[i].getSize() == size){
+                shirtsBySizeArr[place] = this.shirtsArr[i];
                 place++;
             }
         }
-        return ShirtsBySizeArr;
+        return shirtsBySizeArr;
 
     }
-    public void AddShirt(Shirt s){
+    public void addShirt(Shirt s){
         Util u = new Util();
-        this.ShirtsArr = u.AddShirt(this.ShirtsArr, s);
+        this.shirtsArr = u.addShirt(this.shirtsArr, s);
     }
 }
 
