@@ -9,13 +9,10 @@ public class RecordEx {
             return info;
         }
         public boolean isInHighschool(){
-            if(this.grade>9) return true;
-            else return false;
+            return this.grade > 9;
         }
     }
-    public record Classroom(int classNum, int grade, Student[] students){
 
-    }
     public static void ThisStudent(String name, int grade, int classNum){
         Student s = new Student(name, grade, classNum);
         System.out.println(s.Information());
