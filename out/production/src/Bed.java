@@ -3,8 +3,8 @@ public class Bed{
     private int Pillow_Amount;
     private String Sheet_Color;
     private double price;
-    int PRICE_CONST = 100;
-    int PILLOW_AMOUNT_CONST = 1;
+    final int PRICE_CONST = 100;
+    final int PILLOW_AMOUNT_CONST = 1;
 
     public Bed(double height, int Pillow_Amount, String Sheet_Color, double price){
         this.height = height;
