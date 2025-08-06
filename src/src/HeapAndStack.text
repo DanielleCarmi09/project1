@@ -1,0 +1,56 @@
+1) 2
+   5
+2) 5
+3) adress
+   adress
+   name: Raz, age: 9
+   name: Raz, age: 9
+4) name: Dan, age: 16
+   name: Dan, age: 16
+5)Before the GC the heap will contain person1(name:Dan, age:16) and person2(name:Ben, age:17), after the GC the heap will only contain person1(name:Dan, age:16)
+6)
+public class DoubleTimedValue(double value, double time) {
+    public DoubleTimedValue(double value, double time){
+        this.value = value;
+        this.time = time;
+    }
+    public void setValue(double value){
+        this.value = value;
+    }
+    public void setTime(double time){
+            this.time = time;
+    }
+}
+
+import java.time.LocalTime;
+
+
+public class DoubleDataSender {
+
+
+   private final String name;
+   private DoubleTimedValue doubleTimedValue;
+
+
+   public DoubleDataSender(String name) {
+       this.name = name;
+       this.doubleTimedValue = new DoubleTimedValue(0,0);
+   }
+
+
+   public void update() {
+       this.doubleTimedValue.setValue(Math.random());
+       this.doubleTimedValue.setTime(LocalTime.now().getSecond());
+   }
+
+
+   public DoubleTimedValue getDoubleTimedValue() {
+       return doubleTimedValue;
+   }
+
+
+}
+
+
+
+}
