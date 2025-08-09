@@ -30,4 +30,14 @@ public enum Month{
         days+=day-1;
         return days;
     }
+
+    public static Month whichMonth(int day){
+        Month[]months = Month.values();
+        int month=0;
+        while(day-months[month].getDaysInTheMonth()>0){
+            day-=months[month].getDaysInTheMonth();
+            month++;
+        }
+        return months[month];
+    }
 }
