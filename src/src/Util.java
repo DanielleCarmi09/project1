@@ -8,6 +8,6 @@ public class Util {
         return newArr;
     }
     public static boolean isTolerant(double value, double wantedValue, double tolerance){
-        return (value>=wantedValue-tolerance && value<=wantedValue+tolerance)|| (value<=wantedValue-tolerance&&value>=wantedValue+tolerance);
+        return (Math.abs(value-wantedValue)<=tolerance);
     }
 }
