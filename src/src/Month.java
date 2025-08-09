@@ -23,8 +23,11 @@ public enum Month{
     }
     public static int getDaysBefore(Month month, int day){
         int days=0;
+        Month[]months=Month.values();
         for(int i=0;i<month.ordinal();i++){
-            days+=
+            days+=months[i].getDaysInTheMonth();
         }
+        days+=day-1;
+        return days;
     }
 }
