@@ -7,7 +7,6 @@ public record Classroom(int classNum, int grade, Student[] students){
     public int getClassNum(){return this.classNum;}
     public int getGrade(){return this.grade;}
     public Student[] getStudents(){return this.students;}
-    public void setStudents(Student[]students){this.students=students;}
 
     public static Classroom[] sortStudentsByClassroom(Student[]students){
         Classroom[]temp = new Classroom[students.length];
@@ -44,7 +43,7 @@ public record Classroom(int classNum, int grade, Student[] students){
             for(int j=0;j<newStudents.length;j++){
                 newStudents[j]=classrooms[i].getStudents()[j];
             }
-            classrooms[i].setStudents(newStudents);
+            classrooms[i] = new Classroom(newStudents[0].getClassNum(), newStudents[0].getGrade(), newStudents);
         }
 
         for(int i=0;i<classrooms.length;i++){
