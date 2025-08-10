@@ -3,12 +3,10 @@ public interface  ProfessionalBasketBallPlayer{
 
     public static void BasketBallPlayers(ProfessionalBasketBallPlayer[]players){
         for(ProfessionalBasketBallPlayer basketBallPlayer : players){
-            if(basketBallPlayer instanceof Fish fish){
+            if(basketBallPlayer instanceof Fish fish) {
                 fish.goToWork();
-                basketBallPlayer.playBasketball();
-            }else{
-                basketBallPlayer.playBasketball();
             }
+            basketBallPlayer.playBasketball();
         }
     }
 }

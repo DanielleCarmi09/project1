@@ -21,16 +21,16 @@ public abstract class Fish{
     public void walkByFoot(){System.out.println("I'm walking by foot");}
     public abstract void goToWork();
 
-    public static Fish[] isProfessionalBasketBallPlayer(Fish[]fish){
+    public static ProfessionalBasketBallPlayer[] isProfessionalBasketBallPlayer(Fish[]fish){
         int count = 0;
         for(Fish curFish : fish){
             if(curFish instanceof ProfessionalBasketBallPlayer) count++;
         }
-        Fish[]basketBallPlayers = new Fish[count];
+        ProfessionalBasketBallPlayer[]basketBallPlayers = new ProfessionalBasketBallPlayer[count];
         count = 0;
         for(Fish curFish : fish){
             if(curFish instanceof ProfessionalBasketBallPlayer){
-                basketBallPlayers[count] = curFish;
+                basketBallPlayers[count] = (ProfessionalBasketBallPlayer) curFish;
                 count++;
             }
         }
