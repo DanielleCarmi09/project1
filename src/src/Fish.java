@@ -20,4 +20,22 @@ public abstract class Fish{
     public void takeTheTrain(){System.out.println("I'm going by train");}
     public void walkByFoot(){System.out.println("I'm walking by foot");}
     public abstract void goToWork();
+
+    public static Fish[] isProfessionalBasketBallPlayer(Fish[]fish){
+        int count = 0;
+        for(Fish curFish : fish){
+            if(curFish instanceof ProfessionalBasketBallPlayer) count++;
+        }
+        Fish[]basketBallPlayers = new Fish[count];
+        count = 0;
+        for(Fish curFish : fish){
+            if(curFish instanceof ProfessionalBasketBallPlayer){
+                basketBallPlayers[count] = curFish;
+                count++;
+            }
+        }
+        ProfessionalBasketBallPlayer.BasketBallPlayers((ProfessionalBasketBallPlayer[]) basketBallPlayers);
+        return basketBallPlayers;
+
+    }
 }
