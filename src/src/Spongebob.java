@@ -6,4 +6,6 @@ public class Spongebob extends Fish{
     public void goToWork(){
         takeTheCar();
     }
+
+    public void playBasketball(){System.out.println("I'm playing basketball");}
 }
