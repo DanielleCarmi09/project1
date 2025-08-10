@@ -1,6 +1,8 @@
 public record Student(String name, int grade, int classNum) {
+
+        private static final int HIGHSCHOOL_GRADE = 9;
         public Student(String name, int classNum){
-            this(name, 9, classNum);
+            this(name, HIGHSCHOOL_GRADE, classNum);
         }
 
         public int getGrade() {return this.grade;}
@@ -13,7 +15,7 @@ public record Student(String name, int grade, int classNum) {
         }
 
         public boolean isInHighschool(){
-            return this.grade > 9;
+            return this.grade > HIGHSCHOOL_GRADE;
         }
 
         public static void ThisStudent(String name, int grade, int classNum){
