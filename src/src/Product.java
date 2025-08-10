@@ -13,16 +13,16 @@ public enum Product {
         this.name = name;
         this.price = price;
     }
-    public static void setApplePrice(Scanner reader){
-        System.out.println("What price are the apples by weight?");
-        int price = reader.nextInt();
-        APPLES.price = price;
-    }
 
-    public static int fullPrice(Product[]products, int[]amounts){
+    public static int fullPrice(Product[]products, int[]amounts, Scanner reader){
         int price=0;
         for(int i=0; i<products.length;i++){
-            price+=products[i].price*amounts[i];
+            if(products[i] == APPLES){
+                System.out.println("What price are the apples by weight?");
+                price+= reader.nextInt();
+            }else {
+                price += products[i].price * amounts[i];
+            }
         }
         return price;
     }
