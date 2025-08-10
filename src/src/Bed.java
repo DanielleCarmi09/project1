@@ -14,10 +14,7 @@ public class Bed{
     }
 
     public Bed(double height, String sheetColor){
-        this.height = height;
-        this.pillowAmount = PILLOW_AMOUNT_CONST;
-        this.sheetColor = sheetColor;
-        this.price = PRICE_CONST;
+        new Bed(height, PILLOW_AMOUNT_CONST, sheetColor, PRICE_CONST);
     }
 
     public double getHeight(){
