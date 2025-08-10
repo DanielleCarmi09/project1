@@ -9,6 +9,28 @@ public record Classroom(int classNum, int grade, Student[] students){
     public Student[] getStudents(){return this.students;}
 
     public static Classroom[] sortStudentsByClassroom(Student[]students){
+        Classroom[]temp = sortIntoClassrooms(students);
+        Classroom[]classrooms = cmpressArr(temp);
+        classrooms = sortByGradeAndClassNum(classrooms);
+
+
+        return classrooms;
+    }
+
+    public static int isClassroomFound(Classroom[]classrooms, int grade, int classNum){
+        for(int i=0;i<classrooms.length;i++){
+            if(classrooms[i].getClassNum()==classNum&&classrooms[i].getGrade()==grade) return i;
+        }
+        return -1;
+    }
+    public static int isEmpty(Student[]students){
+        int count=0;
+        while(students[count]!=null){
+            count++;
+        }
+        return count;
+    }
+    public static Classroom[] sortIntoClassrooms(Student[]students){
         Classroom[]temp = new Classroom[students.length];
         int empty = 0;
         for (int i=0;i< students.length;i++){
@@ -28,6 +50,22 @@ public record Classroom(int classNum, int grade, Student[] students){
                 temp[placeInArr].getStudents()[isEmpty(temp[placeInArr].getStudents())]=students[i];
             }
         }
+        return temp;
+    }
+
+    public static Classroom[] sortByGradeAndClassNum(Classroom[]classrooms){
+        for(int i=0;i<classrooms.length;i++){
+            for(int j=0;j<classrooms.length-1;j++){
+                if(classrooms[j].getGrade()>classrooms[j+1].getGrade()||(classrooms[j].getGrade()==classrooms[j+1].getGrade()&&classrooms[j].getClassNum()>classrooms[j+1].getClassNum())){
+                    Classroom tempClassroom = classrooms[j+1];
+                    classrooms[j+1]=classrooms[j];
+                    classrooms[j]=tempClassroom;
+                }
+            }
+        }
+        return classrooms;
+    }
+    public static Classroom[] cmpressArr(Classroom[]temp){
         int count=0;
         while(temp[count]!=null){
             count++;
@@ -45,30 +83,6 @@ public record Classroom(int classNum, int grade, Student[] students){
             }
             classrooms[i] = new Classroom(newStudents[0].getClassNum(), newStudents[0].getGrade(), newStudents);
         }
-
-        for(int i=0;i<classrooms.length;i++){
-            for(int j=0;j<classrooms.length-1;j++){
-                if(classrooms[j].getGrade()>classrooms[j+1].getGrade()||(classrooms[j].getGrade()==classrooms[j+1].getGrade()&&classrooms[j].getClassNum()>classrooms[j+1].getClassNum())){
-                    Classroom tempClassroom = classrooms[j+1];
-                    classrooms[j+1]=classrooms[j];
-                    classrooms[j]=tempClassroom;
-                }
-            }
-        }
         return classrooms;
-    }
-
-    public static int isClassroomFound(Classroom[]classrooms, int grade, int classNum){
-        for(int i=0;i<classrooms.length;i++){
-            if(classrooms[i].getClassNum()==classNum&&classrooms[i].getGrade()==grade) return i;
-        }
-        return -1;
-    }
-    public static int isEmpty(Student[]students){
-        int count=0;
-        while(students[count]!=null){
-            count++;
-        }
-        return count;
     }
 }
