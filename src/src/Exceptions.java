@@ -70,25 +70,16 @@ public class Exceptions {
         }
     }
         //solution 7
-        public void printNameUpperCase(){
-            try{
-                System.out.println(name.toUpperCase());
-            }catch(Exception e){
-                System.out.println("the name is too short");
-            }
-        }
+        // answer: make the name longer or delete the coondition name.length>3 from the constractor
 
         //solution 8
     public static int getIndex(String[]arr){
-        try {
-            for (int i = 0; i <= arr.length; i++) {
+            for (int i = 0; i < arr.length; i++) {
                 if (arr[i].equals("yellow")) {
                     return i;
                 }
-                return -1;
             }
-        }catch (Exception e){
-            System.out.println("the index is out of bounds for arr");
-        }
+        return -1;
+        // answer: delete "=" in for loop
     }
 }
