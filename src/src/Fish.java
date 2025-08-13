@@ -29,12 +29,12 @@ public abstract class Fish{
         ProfessionalBasketBallPlayer[]basketBallPlayers = new ProfessionalBasketBallPlayer[count];
         count = 0;
         for(Fish curFish : fish){
-            if(curFish instanceof ProfessionalBasketBallPlayer){
-                basketBallPlayers[count] = (ProfessionalBasketBallPlayer) curFish;
+            if(curFish instanceof ProfessionalBasketBallPlayer professionalBasketBallPlayer){
+                basketBallPlayers[count] = professionalBasketBallPlayer;
                 count++;
             }
         }
-        ProfessionalBasketBallPlayer.BasketBallPlayers((ProfessionalBasketBallPlayer[]) basketBallPlayers);
+        ProfessionalBasketBallPlayer.BasketBallPlayers(basketBallPlayers);
         return basketBallPlayers;
 
     }
