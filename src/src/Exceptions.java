@@ -22,18 +22,19 @@ public class Exceptions {
     }
 
     public static void question3(Scanner reader) throws IllegalArgumentException, RuntimeException {
-        try {
             for (int i = 0; i < 100; i++) {
                 int num = reader.nextInt();
                 if (num == 45) {
-                    throw new IllegalArgumentException("Illegal Argument Exception");
+                    try {
+                        throw new IllegalArgumentException("Illegal Argument Exception");
+                    }
+                    catch(IllegalArgumentException illegalArgumentException){
+                        System.out.println(illegalArgumentException);
+                    }
+
                 } else if (num == 100) {
                     throw new RuntimeException("Runtime Exception");
                 }
-            }
-        }
-        catch(IllegalArgumentException illegalArgumentException){
-            System.out.println(illegalArgumentException);
         }
     }
 
