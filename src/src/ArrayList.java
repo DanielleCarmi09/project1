@@ -1,47 +1,51 @@
-public class ArrayList<T>{
+public class ArrayList<T> {
     private Object[] List;
-    public ArrayList(Object[]List){
-        this.List = List;
+    private int index;
+    private final int STARTING_LIST_SIZE = 4;
+
+    public ArrayList() {
+        this.List = new Object[STARTING_LIST_SIZE];
+        this.index = 0;
     }
 
-    public void add(T item){
-        int index = 0;
-        while(this.List[index]!=null || index <this.List.length){
-            index++;
-        }
-        if(index == this.List.length-1){
-            this.List = new Object[this.List.length*2];
-            this.List[index] = item;
-        }else{
+    public void add(T item) {
+        if (this.index == this.List.length - 1) {
+            Object[]newList = new Object[this.List.length * 2];
+
+            this.List[this.index+1] = item;
+        } else {
             this.List[index] = item;
         }
+        index++;
     }
 
-    public Object get(int index){
+    public Object get(int index) {
         return this.List[index];
     }
 
-    public void set(T item, int index){
+    public void set(T item, int index) {
         this.List[index] = item;
     }
 
-    public Object[] AsArray(){
+    public Object[] AsArray() {
         int count = 0;
-        while(this.List[count]!=null){
+        while (this.List[count] != null) {
             count++;
         }
-        Object[]compressed = new Object[count+1];
-        for(int i=0;i<compressed.length;i++){
+        Object[] compressed = new Object[count + 1];
+        for (int i = 0; i < compressed.length; i++) {
             compressed[i] = this.List[i];
         }
         return compressed;
     }
 
-    public Object[] getList(){ return this.List;}
+    public Object[] getList() {
+        return this.List;
+    }
 
-    public static void printArrayList(ArrayList list){
-        for(int i = 0; i<list.getList().length;i++){
-            if(list.getList()[i]!=null){
+    public static void printArrayList(ArrayList list) {
+        for (int i = 0; i < list.getList().length; i++) {
+            if (list.getList()[i] != null) {
                 System.out.println(list.getList()[i]);
             }
         }
