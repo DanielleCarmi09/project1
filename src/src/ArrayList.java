@@ -25,6 +25,18 @@ public class ArrayList<T>{
         this.List[index] = item;
     }
 
+    public Object[] AsArray(){
+        int count = 0;
+        while(this.List[count]!=null){
+            count++;
+        }
+        Object[]compressed = new Object[count+1];
+        for(int i=0;i<compressed.length;i++){
+            compressed[i] = this.List[i];
+        }
+        return compressed;
+    }
+
     public Object[] getList(){ return this.List;}
 
     public static void printArrayList(ArrayList list){
