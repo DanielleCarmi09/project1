@@ -3,11 +3,7 @@
 public class exercises {
 
     public static void ex1() {
-        isInString i = (String str, char ch) ->
-        {
-            if(str.indexOf(ch)!=-1) return true;
-            return false;
-        };
+        isInString i = (String str, char ch) -> str.indexOf(ch)!=-1;
     }
 
     public static void ex2(){
