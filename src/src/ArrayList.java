@@ -1,43 +1,43 @@
 public class ArrayList<T> {
-    private Object[] List;
-    private int index;
-    private final int STARTING_LIST_SIZE = 4;
+    private Object[] list;
+    private int size;
+    private static final int STARTING_LIST_SIZE = 4;
 
     public ArrayList() {
-        this.List = new Object[STARTING_LIST_SIZE];
-        this.index = -1;
+        this.list = new Object[STARTING_LIST_SIZE];
+        this.size = -1;
     }
 
     public void add(T item) {
-        if (this.index == this.List.length - 1) {
-            Object[] newList = new Object[this.List.length * 2];
-            for (int i = 0; i < this.index + 1; i++) {
-                newList[i] = this.List[i];
+        if (this.size == this.list.length - 1) {
+            Object[] newList = new Object[this.list.length * 2];
+            for (int i = 0; i < this.size + 1; i++) {
+                newList[i] = this.list[i];
             }
-            this.List = newList;
+            this.list = newList;
         }
-        this.index++;
-        this.List[index] = item;
+        this.size++;
+        this.list[this.size] = item;
     }
 
     public Object get(int index) {
-        return this.List[index];
+        return this.list[index];
     }
 
     public void set(T item, int index) {
-        this.List[index] = item;
+        this.list[index] = item;
     }
 
-    public <T> T[] AsArray() {
-        Object[] compressed = new Object[index + 1];
+    public <T> T[] asArray() {
+        Object[] compressed = new Object[size + 1];
         for (int i = 0; i < compressed.length; i++) {
-            compressed[i] = this.List[i];
+            compressed[i] = this.list[i];
         }
         return (T[])compressed;
     }
 
     public T[] getList() {
-        return (T[])this.List;
+        return (T[])this.list;
     }
 
     public static void printArrayList(ArrayList list) {
