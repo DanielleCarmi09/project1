@@ -35,8 +35,8 @@ public class ArrayList<T> {
         return compressed;
     }
 
-    public Object[] getList() {
-        return this.List;
+    public T[] getList() {
+        return (T[])this.List;
     }
 
     public static void printArrayList(ArrayList list) {
