@@ -21,21 +21,5 @@ public abstract class Fish{
     public void walkByFoot(){System.out.println("I'm walking by foot");}
     public abstract void goToWork();
 
-    public static ProfessionalBasketBallPlayer[] isProfessionalBasketBallPlayer(Fish[]fish){
-        int count = 0;
-        for(Fish curFish : fish){
-            if(curFish instanceof ProfessionalBasketBallPlayer) count++;
-        }
-        ProfessionalBasketBallPlayer[]basketBallPlayers = new ProfessionalBasketBallPlayer[count];
-        count = 0;
-        for(Fish curFish : fish){
-            if(curFish instanceof ProfessionalBasketBallPlayer professionalBasketBallPlayer){
-                basketBallPlayers[count] = professionalBasketBallPlayer;
-                count++;
-            }
-        }
-        ProfessionalBasketBallPlayer.BasketBallPlayers(basketBallPlayers);
-        return basketBallPlayers;
 
-    }
 }
