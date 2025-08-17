@@ -21,7 +21,7 @@ public class GenericInformationSignal<T> implements informationSignal {
 
     @Override
     public T[] AsArray() {
-        return (T[]) formerValues.AsArray();
+        return (T[]) formerValues.asArray();
     }
 
 }
