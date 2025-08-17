@@ -40,10 +40,8 @@ public class ArrayList<T> {
     }
 
     public static void printArrayList(ArrayList list) {
-        for (int i = 0; i < list.getList().length; i++) {
-            if (list.getList()[i] != null) {
-                System.out.println(list.getList()[i]);
-            }
-        }
+        int count = 0;
+        while(list.getList()[count]!=null) System.out.println(list.getList()[count].toString());
+        count++;
     }
 }
