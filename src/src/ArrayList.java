@@ -5,18 +5,19 @@ public class ArrayList<T> {
 
     public ArrayList() {
         this.List = new Object[STARTING_LIST_SIZE];
-        this.index = 0;
+        this.index = -1;
     }
 
     public void add(T item) {
         if (this.index == this.List.length - 1) {
-            Object[]newList = new Object[this.List.length * 2];
-
-            this.List[this.index+1] = item;
-        } else {
-            this.List[index] = item;
+            Object[] newList = new Object[this.List.length * 2];
+            for (int i = 0; i < this.index + 1; i++) {
+                newList[i] = this.List[i];
+            }
+            this.List = newList;
         }
-        index++;
+        this.index++;
+        this.List[index] = item;
     }
 
     public Object get(int index) {
@@ -27,12 +28,12 @@ public class ArrayList<T> {
         this.List[index] = item;
     }
 
-    public Object[] AsArray() {
+    public <T> T[] AsArray() {
         Object[] compressed = new Object[index + 1];
         for (int i = 0; i < compressed.length; i++) {
             compressed[i] = this.List[i];
         }
-        return compressed;
+        return (T[])compressed;
     }
 
     public T[] getList() {
