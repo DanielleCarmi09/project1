@@ -28,11 +28,7 @@ public class ArrayList<T> {
     }
 
     public Object[] AsArray() {
-        int count = 0;
-        while (this.List[count] != null) {
-            count++;
-        }
-        Object[] compressed = new Object[count + 1];
+        Object[] compressed = new Object[index + 1];
         for (int i = 0; i < compressed.length; i++) {
             compressed[i] = this.List[i];
         }
