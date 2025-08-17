@@ -1,3 +1,5 @@
+
+
 public class exercises {
 
     public static void ex1() {
