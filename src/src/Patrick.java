@@ -1,4 +1,4 @@
-public class Patrick extends Fish {
+public class Patrick extends Fish implements ProfessionalBasketBallPlayer{
     public Patrick(String name, int age, String favoriteFood) {
         super(name, age, favoriteFood);
     }

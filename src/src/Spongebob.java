@@ -1,4 +1,4 @@
-public class Spongebob extends Fish{
+public class Spongebob extends Fish implements ProfessionalBasketBallPlayer{
     public Spongebob(String name, int age, String favoriteFood){
         super(name, age, favoriteFood);
     }
