@@ -5,10 +5,6 @@ public record Student(String name, int grade, int classNum) {
             this(name, HIGHSCHOOL_GRADE, classNum);
         }
 
-        public int getGrade() {return this.grade;}
-        public int getClassNum(){return this.classNum;}
-
-
         public String Information(){
             String info = "student " + this.name + " is in " + this.grade + "th grade in class number " + this.classNum;
             return info;
