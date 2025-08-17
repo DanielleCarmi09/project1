@@ -16,7 +16,7 @@ public class exercises {
     }
 
     public static void ex3(){
-        PrintInt printInt = (num, getInt) -> System.out.println(getInt(num));
+        PrintInt printInt = (num, getInt) -> System.out.println(getInt.returnNum(num));
     }
     
 }
