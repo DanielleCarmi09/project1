@@ -3,9 +3,9 @@
 public class Main {
 
     // Question 3 answer -
-    // since a StrongFilter can only use objects that inherite from class T
-    // and a WeakFilter can only use objects that class T inherites from
-    // they make a contrast and have no shared E values they can both use.
+    //The NitayFilter isn't possible since it would have to do overloading for the "and" and "or" functions,
+    // and since they are generic the function would use the upper bound which for both the weak and strong filter
+    // it would be "Object", which would make overloading impossible since both actions get the same variables.
     public static void main(String[] args) {
     }
 }
